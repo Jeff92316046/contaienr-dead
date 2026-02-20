@@ -59,7 +59,7 @@ def main():
         logger.error("MONITOR_CONTAINER_NAME environment variable is not set. Exiting.")
         return
 
-    logger.info(f"Starting monitor for container: '{MONITOR_CONTAINER_NAME}' every ⦗CHECK_INTERVAL⦘ seconds.")
+    logger.info(f"Starting monitor for container: '{MONITOR_CONTAINER_NAME}' every {CHECK_INTERVAL} seconds.")
     
     # Initialize docker client
     try:
