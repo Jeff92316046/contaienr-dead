@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  discord-health-monitor:
+    build: .
+    container_name: discord-health-monitor
+    restart: unless-stopped
+    volumes:
+      # Required to check the host's docker containers from within this container
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    env_file:
+      - .env
+
+  test-container:
+    image: nginx:alpine
+    container_name: test-container
+    restart: unless-stopped
